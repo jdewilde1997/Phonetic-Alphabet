@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3 {
+namespace PhoneticAlphabet {
     class Program {
         static void Main(string[] args) {
-
-
 
             Console.WriteLine("Vul het woord in");
             var s = Console.ReadLine();
@@ -61,8 +59,10 @@ namespace ConsoleApp3 {
                 } else if(char.IsUpper(word[i])) {
                     //output += CharToName(word[i]).ToUpper() + " ";
                     arrayOutput += array[(int)word[i] - 65].ToUpper() + " ";
-                } else {
+                } else if(char.IsNumber(word[i])){
                     arrayOutput += array[(int)word[i] - 48 + 26] + " ";
+                } else {
+                    arrayOutput += word[i] + " ";
                 }
 
             }
